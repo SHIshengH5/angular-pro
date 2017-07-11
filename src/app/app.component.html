@@ -1,0 +1,19 @@
+<div class="container">
+    <form role="form">
+        <div class="form-group">
+            <label>标题:</label>
+            <input type="text" placeholder="请输入标题" class="form-control" #newtitle/>
+        </div>
+        <div class="form-group">
+            <label>链接:</label>
+            <input type="url" placeholder="请输入连接" class="form-control" #newLink/>
+        </div>
+        <div class="form-group">
+            <input type="button" value="提交" class="btn btn-success" (click)="getDate(newtitle,newLink)" />
+        </div>
+    </form>
+    <ng-container *ngFor="let item of sortArticle()">
+        <app-article [article]="item"></app-article>
+    </ng-container>
+    
+</div>
